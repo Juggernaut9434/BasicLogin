@@ -15,6 +15,7 @@
   "author": "Michael Mathews <michaelmathewsdr@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "lowdb": "^1.0.0"
   }
 }
