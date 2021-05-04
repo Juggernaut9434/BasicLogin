@@ -1,0 +1,20 @@
+{
+  "name": "baisclogin",
+  "version": "0.0.1",
+  "description": "basic login system to learn how to create db, api, backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "beginner-backend-dev",
+    "nodeJS",
+    "api-creation",
+    "react"
+  ],
+  "author": "Michael Mathews <michaelmathewsdr@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "lowdb": "^1.0.0"
+  }
+}
