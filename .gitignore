@@ -1,3 +1,9 @@
+# ignore my todos
+todo
+
+
+# **********************************************************************
+# 							Node JS ignore notes
 # Logs
 logs
 *.log
