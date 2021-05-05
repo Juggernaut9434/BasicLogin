@@ -2,5 +2,12 @@
 // the "main" equivalent
 // Runs the backend scripts
 
-import express from "express";
+const express = require("express");
+const serer = require("../server");
 
+
+const app = express();
+
+// connect the server routes?? 
+// TODO fix
+app.use(server);

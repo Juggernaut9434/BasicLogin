@@ -6,7 +6,11 @@
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const path = require("path");
+const bcrypt = require("bcryptjs");
+const shortid = require("shortid");
+const fs = require("fs");
 
+import { v4 } from "uuid";
 
 const databaseFile = path.join(__dirname, "../data/database.json");
 const adapter = new FileSync(databaseFile);
@@ -33,9 +37,9 @@ export const createUser = (userDetails) => {
     
     // make user object.
     const user = {
-        id: 0,
-        uuid: null,
-        username,
+        id: shortid(),
+        uuid: v4(),
+        username: userDetails.username,
         password,
         createdAt: new Date(),
         modifiedAt: new Date()
