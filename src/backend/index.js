@@ -3,11 +3,15 @@
 // Runs the backend scripts
 
 const express = require("express");
-const serer = require("../server");
 
+const homeRoutes = require('./home');
+const usersRoutes = require('./users');
+
+const backendPort = 3001;
 
 const app = express();
 
-// connect the server routes?? 
-// TODO fix
-app.use(server);
+app.use('/users', usersRoutes);
+app.use(homeRoutes);
+
+app.listen(backendPort);
