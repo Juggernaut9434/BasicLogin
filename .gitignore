@@ -1,6 +1,8 @@
 # ignore my todos
 todo
 
+# internal files
+*.int.*
 
 # **********************************************************************
 # 							Node JS ignore notes

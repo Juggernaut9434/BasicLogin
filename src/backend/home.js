@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
 	// temporary
-	console.log('Request from: ${req.originalUrl}');
+	console.log(`Request from: ${req.originalUrl}`);
 	res.status(200).json({ results: { "hello": "world", "route": "home" } });
 	
 	// change above to returning a different object like some html components

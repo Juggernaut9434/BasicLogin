@@ -16,6 +16,8 @@ const databaseFile = path.join(__dirname, "../data/database.json");
 const adapter = new FileSync(databaseFile);
 const db = low(adapter);
 
+const USER_TABLE = "users";
+
 // seed the database
 export const seedDb = () => {
 
@@ -50,11 +52,26 @@ export const createUser = (userDetails) => {
 };
 
 // save user to database
-
-
+const saveUser = (user) => {
+    db.get(USER_TABLE).push(user).write();
+};
 
 // get user
+export const getUser = (userId) => {
+    const result = db
+        .get(USER_TABLE)
+        .find({ "userId": userId})
+        .value();
+    return result;
+};
 
 // update user
+/*
+export const updateUser = (userId, edits) => {
+    const user = getUserById(userId);
 
+    
+    db.get(USER_TABLE).find(user).assign(edits).write();
+};
+*/
 // remove user
