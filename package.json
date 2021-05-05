@@ -1,6 +1,6 @@
 {
   "name": "baisclogin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "basic login system to learn how to create db, api, backend",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,10 @@
   "author": "Michael Mathews <michaelmathewsdr@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "lowdb": "^1.0.0"
+    "lowdb": "^1.0.0",
+    "shortid": "^2.2.16",
+    "uuid": "^8.3.2"
   }
 }
