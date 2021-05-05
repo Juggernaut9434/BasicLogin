@@ -2,7 +2,7 @@
   "name": "baisclogin",
   "version": "1.0.0",
   "description": "basic login system to learn how to create db, api, backend",
-  "main": "index.js",
+  "main": "./src/backend/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
