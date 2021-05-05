@@ -7,7 +7,7 @@ const router = express.Router();
 
 // hello world get request
 router.get("/", (req, res) => {
-	res.status(200).json({ results: { "hello": "world" } });
+	res.status(200).json({ results: { "hello": "world", "route": "users" } });
 });
 
 export default router;

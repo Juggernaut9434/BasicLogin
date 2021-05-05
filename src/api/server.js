@@ -5,7 +5,7 @@ const homeRoutes = require('./home');
 const usersRoutes = require('./users');
 
 // define variables
-var express = require('express'),
+const express = require('express'),
 	app = express,
 	port = process.env.PORT || 3000;
 
@@ -18,7 +18,7 @@ app.listen(port);
  * and /users/delete?userId=# 
 **/
 app.use('/users', usersRoutes);
-app.use('/', homeRoutes)
+app.use('/', homeRoutes);
 
 // logging
 console.log("api server started on port: " + port);
