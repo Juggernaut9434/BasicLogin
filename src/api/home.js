@@ -1,5 +1,5 @@
 // Routes.js
-// the API requests themselves
+// the API requests themselves for the home page
 
 import express from "express";
 
@@ -9,3 +9,5 @@ const router = express.Router();
 router.get("/", (req, res) => {
 	res.status(200).json({ results: { "hello": "world" } });
 });
+
+export default router;
