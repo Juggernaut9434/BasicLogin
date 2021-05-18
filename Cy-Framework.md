@@ -8,20 +8,20 @@ so if we use some code of theirs we should use the following
 
 ## Setup
 
-- Have a Project with NPM already
-	1. Branch from the current repo
-	1. run `npm install cypress --save-dev`
-	1. create a `cypress.json` and `cypress/` folder
-- A new Project
-	1. `npm init`
-	1. Branch off the main repo into cypress branch
-	1. `npm install cypress --save-dev`
-	1. create a `cypress.json` and `cypress/` folder
-
-- Put the baseUrl in the `~/cypress.json`
-- create `~/cypress/integration/sample.spec.ts`
-- fill the sample.spec.ts with basic non-web data checking
-- commit those changes on the cypress branch
+1. Add Cypress to NPM Project
+	- Have a Project with NPM already
+		1. Branch from the current repo
+		1. run `npm install cypress --save-dev`
+		1. create a `cypress.json` and `cypress/` folder
+	- A new Project
+		1. `npm init`
+		1. Branch off the main repo into cypress branch
+		1. `npm install cypress --save-dev`
+		1. create a `cypress.json` and `cypress/` folder
+1. Put the baseUrl in the `~/cypress.json`
+1. create `~/cypress/integration/sample.spec.ts`
+1. fill the sample.spec.ts with basic non-web data checking
+1. commit those changes on the cypress branch
 
 
 ## The Framework
