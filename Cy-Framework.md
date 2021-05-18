@@ -28,10 +28,8 @@ so if we use some code of theirs we should use the following
 
 This cypress project will be done in Typescript
 
-We are going to be doing a Page Object Model (POM) and App Action Hybrid
-where there will be classes that will have both 
-__selectors__ and __functionality__ 
-in the `~/cypress/integration/pages/` folder.
+We are going to be doing App Action Framework with no POM
+where the tests are in the `cypress/integration/` folder.
 The classes will have methods that return `this`
 which is the class itself so that we can call
 each method in sequence.
@@ -43,7 +41,7 @@ For example, if there is a login page and a settings
 page behind that, we can use the API to store
 the token in Local Storage and arrive to the
 Settings page much faster rather than using the UI.
-We will put the App Actions in `~/cypress/support/` folder,
+We will put the App Actions in `cypress/support/` folder,
 in the `commands.ts` file. We do this because support
 is processed before the integration directory for Cypress.
 
@@ -53,11 +51,6 @@ is processed before the integration directory for Cypress.
 	- cypress.json
 	- cypress/
 		- integration/
-			- pages/
-				- loginPOM
-				- homePOM
-				- 
-				- 
 			- home.spec.ts
 			- login.spec.ts
 			- 
@@ -144,7 +137,7 @@ in a test.
 
 There is no need to wait or put waits in the program
 
-Instead of state, we use closures like `cy.get('elem').then( () => {}`
+Instead of state, we use closures like `cy.get('elem').then( () => {});`
 
 ## Discussion
 
@@ -154,19 +147,7 @@ Instead of state, we use closures like `cy.get('elem').then( () => {}`
 
 #### If we are using Non-Brittle UI selectors, why use POM?
 
-We are abstracting the cypress commands onto a
-seperate test set. 
-__WHY?__ 
-Will they be used more than once?
-Maybe, depending on the functionality.
-For example, checking certain boxes on the 
-settings page, you can chain them together
-and have different configurations be done well
-and readable. __Yes.__ It saves code rewriting. 
-__No__ because that is basically a test case itself.
-So, don't do POM? 
-
-Correct, do not do POM, but have the selectors 
+We are not going to do POM, but have the selectors 
 in a json file. Because, we agree that methods in
 the classes are not good, therefore it is basically
 a json file. 
@@ -174,4 +155,3 @@ a json file.
 #### To login, should we use the API or Stub?
 
 Good Question. [sources](https://docs.cypress.io/api/commands/stub)
-
