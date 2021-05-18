@@ -8,20 +8,20 @@ so if we use some code of theirs we should use the following
 
 ## Setup
 
-1. Add Cypress to NPM Project
-	- Have a Project with NPM already
-		1. Branch from the current repo
-		1. run `npm install cypress --save-dev`
-		1. create a `cypress.json` and `cypress/` folder
-	- A new Project
-		1. `npm init`
-		1. Branch off the main repo into cypress branch
-		1. `npm install cypress --save-dev`
-		1. create a `cypress.json` and `cypress/` folder
-1. Put the baseUrl in the `~/cypress.json`
-1. create `~/cypress/integration/sample.spec.ts`
-1. fill the sample.spec.ts with basic non-web data checking
-1. commit those changes on the cypress branch
+- Have a Project with NPM already
+	1. Branch from the current repo
+	1. run `npm install cypress --save-dev`
+	1. create a `cypress.json` and `cypress/` folder
+- A new Project
+	1. `npm init`
+	1. Branch off the main repo into cypress branch
+	1. `npm install cypress --save-dev`
+	1. create a `cypress.json` and `cypress/` folder
+
+- Put the baseUrl in the `~/cypress.json`
+- create `~/cypress/integration/sample.spec.ts`
+- fill the sample.spec.ts with basic non-web data checking
+- commit those changes on the cypress branch
 
 
 ## The Framework
@@ -30,9 +30,6 @@ This cypress project will be done in Typescript
 
 We are going to be doing App Action Framework with no POM
 where the tests are in the `cypress/integration/` folder.
-The classes will have methods that return `this`
-which is the class itself so that we can call
-each method in sequence.
 
 We will also have App Actions in this project
 which will use systematic approaches to arrive
@@ -95,12 +92,15 @@ so `home.spec.ts` or `profile.spec.ts`
 ```typescript
 describe('My Test Collection', () => {
 	beforeEach(function () {
-		cy.visit();
+	  cy.visit();
 	});
 
 	it('First Test' () => {
-		login.enterCreds();
-		cy.click(login.submitLoginBtn);
+		cy
+			.getBySel('usernameField')
+			.type('userNameExample');
+		cy
+			.click(login.submitLoginBtn);
 	});
 })
 ```
@@ -124,9 +124,8 @@ the test runs which is much more efficient and stable.
 ## Cypress Configuration
 
 In `cypress.json` we will be putting in some 
-configurations like a baseURL for the website.
+configurations like a `baseURL` for the website.
 and [others](https://docs.cypress.io/guides/references/configuration#cypress-json)
-
 
 
 ## Best Practices Notes
@@ -138,6 +137,7 @@ in a test.
 There is no need to wait or put waits in the program
 
 Instead of state, we use closures like `cy.get('elem').then( () => {});`
+but if we can use App Actions (using the javascript and API to our advantage) to accomplish a state.
 
 ## Discussion
 
